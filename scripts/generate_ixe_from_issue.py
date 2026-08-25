@@ -3,13 +3,11 @@ import re
 from datetime import datetime
 
 def extract_field(body, field_name):
-    """Extract field value from issue body"""
     pattern = rf'### {field_name}\s*\n(.*?)(?=\n###|\Z)'
     match = re.search(pattern, body, re.DOTALL)
     return match.group(1).strip() if match else 'N/A'
 
 def get_next_ixe_number():
-    """Get next IXE number for current year"""
     year = datetime.now().year
     registry_dir = f'registry/{year}'
     os.makedirs(registry_dir, exist_ok=True)
@@ -27,7 +25,7 @@ def get_next_ixe_number():
     return max(numbers) + 1 if numbers else 1
 
 def main():
-    title = os.getenv('ISSUE_TITLE', '')
+    title = os.getenv('ISSUE_TITLE', 'Unknown Title')
     body = os.getenv('ISSUE_BODY', '')
     issue_number = os.getenv('ISSUE_NUMBER', '0')
     
@@ -42,7 +40,9 @@ def main():
     ixe_num = get_next_ixe_number()
     ixe_id = f'IXE-{year}-{ixe_num:04d}'
     
-    markdown = f"""# {ixe_id}
+    clean_title = re.sub(r'^\[IXE\]\s*', '', title, flags=re.IGNORECASE).strip()
+    
+    markdown = f"""# {ixe_id} {clean_title}
 
 ## Metadata
 - **ID:** {ixe_id}
@@ -57,20 +57,3 @@ def main():
 {description}
 
 ## Steps to Reproduce
-{reproduction}
-
-## Expected Behavior
-{expected}
-
-## Resolution
-_Resolution details will be added here._
-"""
-    
-    filename = f'registry/{year}/{ixe_id}.md'
-    with open(filename, 'w', encoding='utf-8') as f:
-        f.write(markdown)
-    
-    print(f'Created {filename}')
-
-if __name__ == '__main__':
-    main()
