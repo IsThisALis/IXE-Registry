@@ -57,3 +57,20 @@ def main():
 {description}
 
 ## Steps to Reproduce
+{reproduction}
+
+## Expected Behavior
+{expected}
+
+## Resolution
+_Resolution details will be added here._
+"""
+    
+    filename = f'registry/{year}/{ixe_id}.md'
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(markdown)
+    
+    print(f'Created {filename}')
+
+if __name__ == '__main__':
+    main()
