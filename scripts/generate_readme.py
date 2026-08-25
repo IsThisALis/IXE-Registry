@@ -8,7 +8,6 @@ def parse_ixe_file(filepath):
     
     metadata = {}
     
-    # Надежный парсинг через Regex
     id_match = re.search(r'\*\*ID:\*\*\s*(.+)', content)
     metadata['id'] = id_match.group(1).strip() if id_match else 'N/A'
     
@@ -24,7 +23,6 @@ def parse_ixe_file(filepath):
     stat_match = re.search(r'\*\*Status:\*\*\s*(.+)', content)
     metadata['status'] = stat_match.group(1).strip() if stat_match else 'N/A'
     
-    # Извлекаем заголовок из первой строки: # IXE-2026-0001 Title Here
     title_match = re.search(r'^#\s*(IXE-\d{4}-\d+)\s+(.*)$', content, re.MULTILINE)
     if title_match and title_match.group(2).strip():
         metadata['title'] = title_match.group(2).strip()
@@ -50,7 +48,6 @@ def generate_readme():
                 filepath = os.path.join(year_path, filename)
                 all_ixes.append(parse_ixe_file(filepath))
     
-    # Сортировка по ID (новые сверху)
     all_ixes.sort(key=lambda x: x.get('id', ''), reverse=True)
     
     total = len(all_ixes)
@@ -62,7 +59,6 @@ def generate_readme():
     for ixe in all_ixes[:20]:
         status_icon = '✅' if '✅' in ixe.get('status', '') else '🔧'
         
-        # Защита от случайных звездочек в данных
         clean_id = ixe['id'].replace('**', '').strip()
         clean_proj = ixe.get('project', 'N/A').replace('**', '').strip()
         clean_sev = ixe.get('severity', 'N/A').replace('**', '').strip()
