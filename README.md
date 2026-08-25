@@ -3,16 +3,16 @@
 Official registry of IsThisALis eXceptions and Exposures.
 
 ## Statistics
-- **Total IXE:** 0
+- **Total IXE:** 1
 - **Critical (S1):** 0
 - **Open:** 0
-- **Resolved:** 0
+- **Resolved:** 1
 
 ## Recent IXE
 
 | ID | Project | Severity | Component | Title | Status |
 |----|---------|----------|-----------|-------|--------|
-| _No entries yet_ | | | | | |
+| [** IXE-2026-0001](registry/2026/IXE-2026-0001.md) | ** ReCore | ** N/A | ** [MEM] | ## Metadata | ✅ |
 
 ## How to report
 1. Create a new issue using the IXE template
@@ -25,3 +25,5 @@ Official registry of IsThisALis eXceptions and Exposures.
 - **S2 (Major):** Feature broken, workaround exists
 - **S3 (Minor):** Minor bug, cosmetic issue
 - **S4 (Cosmetic):** Typos, refactoring, documentation
+
+_Last updated: 2026-08-25 16:33:33 UTC_
