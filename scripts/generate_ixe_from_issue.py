@@ -3,7 +3,8 @@ import re
 from datetime import datetime
 
 def extract_field(body, field_name):
-    pattern = rf'### {field_name}\s*\n(.*?)(?=\n###|\Z)'
+    escaped_name = re.escape(field_name) 
+    pattern = rf'### {escaped_name}\s*\n(.*?)(?=\n###|\Z)'
     match = re.search(pattern, body, re.DOTALL)
     return match.group(1).strip() if match else 'N/A'
 
