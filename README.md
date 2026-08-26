@@ -3,15 +3,16 @@
 Official registry of IsThisALis eXceptions and Exposures.
 
 ## Statistics
-- **Total IXE:** 2
-- **Critical (S1):** 1
+- **Total IXE:** 3
+- **Critical (S1):** 2
 - **Open:** 0
-- **Resolved:** 2
+- **Resolved:** 3
 
 ## Recent IXE
 
 | ID | Project | Severity | Component | Title | Status |
 |----|---------|----------|-----------|-------|--------|
+| [IXE-2026-0003](registry/2026/IXE-2026-0003.md) | ReCore | S1 (Critical) | [RND] | Broken textures counter | ✅ |
 | [IXE-2026-0002](registry/2026/IXE-2026-0002.md) | ReCore | S1 (Critical) | [RND] | Camera NPE after update() | ✅ |
 | [IXE-2026-0001](registry/2026/IXE-2026-0001.md) | ReCore | S2 (Major) | [MEM] | Engine cleanup cycle | ✅ |
 
@@ -27,4 +28,4 @@ Official registry of IsThisALis eXceptions and Exposures.
 - **S3 (Minor):** Minor bug, cosmetic issue
 - **S4 (Cosmetic):** Typos, refactoring, documentation
 
-_Last updated: 2026-08-26 02:49:38 UTC_
+_Last updated: 2026-08-26 04:27:37 UTC_
