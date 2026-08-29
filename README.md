@@ -23,10 +23,4 @@ Official registry of IsThisALis eXceptions and Exposures.
 3. Close the issue when resolved
 4. GitHub Actions will automatically update this registry
 
-## Severity Levels
-- **S1 (Critical):** System crash, data loss, security vulnerability
-- **S2 (Major):** Feature broken, workaround exists
-- **S3 (Minor):** Minor bug, cosmetic issue
-- **S4 (Cosmetic):** Typos, refactoring, documentation
-
 _Last updated: 2026-08-27 05:42:57 UTC_
