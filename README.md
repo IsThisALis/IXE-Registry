@@ -3,15 +3,16 @@
 Official registry of IsThisALis eXceptions and Exposures.
 
 ## Statistics
-- **Total IXE:** 4
-- **Critical (S1):** 3
+- **Total IXE:** 5
+- **Critical (S1):** 4
 - **Open:** 0
-- **Resolved:** 4
+- **Resolved:** 5
 
 ## Recent IXE
 
 | ID | Project | Severity | Component | Title | Status |
 |----|---------|----------|-----------|-------|--------|
+| [IXE-2026-0005](registry/2026/IXE-2026-0005.md) | ReCore | S1 (Critical) | [RND] | Broken render cycle | ✅ |
 | [IXE-2026-0004](registry/2026/IXE-2026-0004.md) | ReCore | S1 (Critical) | [IO] | Texture loading broken | ✅ |
 | [IXE-2026-0003](registry/2026/IXE-2026-0003.md) | ReCore | S1 (Critical) | [RND] | Broken textures counter | ✅ |
 | [IXE-2026-0002](registry/2026/IXE-2026-0002.md) | ReCore | S1 (Critical) | [RND] | Camera NPE after update() | ✅ |
@@ -23,4 +24,10 @@ Official registry of IsThisALis eXceptions and Exposures.
 3. Close the issue when resolved
 4. GitHub Actions will automatically update this registry
 
-_Last updated: 2026-08-27 05:42:57 UTC_
+## Severity Levels
+- **S1 (Critical):** System crash, data loss, security vulnerability
+- **S2 (Major):** Feature broken, workaround exists
+- **S3 (Minor):** Minor bug, cosmetic issue
+- **S4 (Cosmetic):** Typos, refactoring, documentation
+
+_Last updated: 2026-08-30 07:09:01 UTC_
